@@ -1,0 +1,45 @@
+urxvt.termName: rxvt-256color
+!urxvt*locale: true
+!urxvt*colorMode: on
+urxvt.font: xft:Inconsolata:antialias=true:size=12, FontAwesome:size=12 
+!urxvt.letterSpace: -5
+!urxvt*faceSize: 13
+urxvt*borderWidth: 0
+
+! double-click to select whole URLs
+!urxvt*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+!I do not like the scrollbar so disable that
+urxvt.scrollBar: false
+
+!Add transparancey
+urxvt.transparent:true
+urxvt.shading:30
+
+!Gslob nature-suede from xcolors.net
+urxvt*foreground: rgb:00/cc/00
+urxvt*background: rgb:00/00/00
+
+urxvt*color0: rgb:00/00/00
+urxvt*color1: rgb:55/ff/55
+
+urxvt*color2: rgb:00/cc/00
+urxvt*color3: rgb:00/cc/00
+
+urxvt*color4: rgb:ff/ff/00
+urxvt*color5: rgb:55/ff/55
+
+urxvt*color6: rgb:00/cc/00
+urxvt*color7: rgb:00/cc/00
+
+urxvt*color8: rgb:e6/00/00
+urxvt*color9: rgb:55/ff/55
+
+urxvt*color10: rgb:55/ff/55
+urxvt*color11: rgb:55/ff/55
+
+urxvt*color12: rgb:ff/ff/00
+urxvt*color13: rgb:55/ff/55
+
+urxvt*color14: rgb:55/ff/55
+urxvt*color15: rgb:00/cc/00
