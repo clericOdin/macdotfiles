@@ -12,13 +12,13 @@
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace  10
-font pango:Droid Sans Mono 10
+font pango:Hack 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
@@ -34,6 +34,7 @@ set $right l
 #Remap Caps to Escape
 exec setxkbmap -option caps:escape
 exec xrdb ~/.Xresources
+exec ~/builds/box-linux-sync/bin/box-sync start
 
 #Remove window title bars
 new_window 1pixel
@@ -59,7 +60,8 @@ bindsym Mod4+Return exec urxvt
 bindsym Mod4+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+d exec dmenu_run
+#bindsym Mod4+d exec dmenu_run
+bindsym Mod4+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -122,11 +124,17 @@ bindsym Mod4+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod4+minus scratchpad show
 
+#workspace variables
+set $workspace1 "//term"
+set $workspace2 "//Web"
+set $workspace3 "//dev"
+set $workspace4 "//msg"
+
 # switch to workspace
-bindsym Mod4+1 workspace //term
-bindsym Mod4+2 workspace //Web
-bindsym Mod4+3 workspace //dev
-bindsym Mod4+4 workspace 4
+bindsym Mod4+1 workspace $workspace1
+bindsym Mod4+2 workspace $workspace2
+bindsym Mod4+3 workspace $workspace3
+bindsym Mod4+4 workspace $workspace4
 bindsym Mod4+5 workspace 5
 bindsym Mod4+6 workspace 6
 bindsym Mod4+7 workspace 7
@@ -135,16 +143,19 @@ bindsym Mod4+9 workspace 9
 bindsym Mod4+0 workspace 10
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move container to workspace //term
-bindsym Mod4+Shift+2 move container to workspace //Web
-bindsym Mod4+Shift+3 move container to workspace //dev
-bindsym Mod4+Shift+4 move container to workspace 4
+bindsym Mod4+Shift+1 move container to workspace $workspace1
+bindsym Mod4+Shift+2 move container to workspace $workspace2
+bindsym Mod4+Shift+3 move container to workspace $workspace3
+bindsym Mod4+Shift+4 move container to workspace $workspace4
 bindsym Mod4+Shift+5 move container to workspace 5
 bindsym Mod4+Shift+6 move container to workspace 6
 bindsym Mod4+Shift+7 move container to workspace 7
 bindsym Mod4+Shift+8 move container to workspace 8
 bindsym Mod4+Shift+9 move container to workspace 9
 bindsym Mod4+Shift+0 move container to workspace 10
+
+assign [class="vivaldi-snapshot"] $workspace2
+assign [class="Skype"] $workspace4
 
 # reload the configuration file
 bindsym Mod4+Shift+c reload
@@ -192,9 +203,9 @@ bar {
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #2f343a #900000 #ffffff
     }
-        status_command i3status
+        status_command i3blocks -c ~/.i3blocks.conf
         position top
-        font xft:Inconsolata 10, FontAwesome 10
+        font xft:Hack 10, FontAwesome 10
         #font pango:Cousine, FontAwesome 10 
         
 }
@@ -210,5 +221,7 @@ bar {
 #######################################################################
 exec i3-config-wizard
 
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id compton -f
+
 #exec --no-startup-id compton -cCGb 

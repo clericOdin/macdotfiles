@@ -1,7 +1,8 @@
-urxvt.termName: rxvt-256color
+!urxvt.termName: rxvt-256color
 !urxvt*locale: true
 !urxvt*colorMode: on
-urxvt.font: xft:Inconsolata:antialias=true:size=12, FontAwesome:size=12 
+!urxvt.font: xft:Inconsolata:antialias=true:size=12, FontAwesome:size=12 
+urxvt.font: xft:Hack:size=10, FontAwesome:size=10
 !urxvt.letterSpace: -5
 !urxvt*faceSize: 13
 urxvt*borderWidth: 0
@@ -17,29 +18,33 @@ urxvt.transparent:true
 urxvt.shading:30
 
 !Gslob nature-suede from xcolors.net
-urxvt*foreground: rgb:00/cc/00
-urxvt*background: rgb:00/00/00
+urxvt*foreground: #d3d3a9
+urxvt*background: #27261f
 
-urxvt*color0: rgb:00/00/00
-urxvt*color1: rgb:55/ff/55
+urxvt*color0: #212121
+urxvt*color1: #b15050
 
-urxvt*color2: rgb:00/cc/00
-urxvt*color3: rgb:00/cc/00
+urxvt*color2: #88a057
+urxvt*color3: #c79342
 
-urxvt*color4: rgb:ff/ff/00
-urxvt*color5: rgb:55/ff/55
+urxvt*color4: #4d7f5c
+urxvt*color5: #9b4769
 
-urxvt*color6: rgb:00/cc/00
-urxvt*color7: rgb:00/cc/00
+urxvt*color6: #aaab46
+urxvt*color7: #d3d3a9 !This is the comment color
 
-urxvt*color8: rgb:e6/00/00
-urxvt*color9: rgb:55/ff/55
+urxvt*color8: #343434
+urxvt*color9: #d68181
 
-urxvt*color10: rgb:55/ff/55
-urxvt*color11: rgb:55/ff/55
+urxvt*color10: #abc080 !Need to change this color
+urxvt*color11: #ebba6e
 
-urxvt*color12: rgb:ff/ff/00
-urxvt*color13: rgb:55/ff/55
+urxvt*color12: #6e987b
+urxvt*color13: #bc7390
 
-urxvt*color14: rgb:55/ff/55
-urxvt*color15: rgb:00/cc/00
+urxvt*color14: #cfd074
+urxvt*color15: #e3e3e9
+
+urxvt*cursorColor: #d3d3a9
+urxvt*highlightColor: #d3d3a9
+urxvt*highlightTextColor: #27261f

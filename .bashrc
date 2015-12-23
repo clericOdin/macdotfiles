@@ -77,7 +77,8 @@ On_IWhite='\e[0;107m'   # White
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias vim='nvim'
+alias ls='ls -al --color=auto'
 PS1="[\u@\h\[$BBlue\] \w \[$Color_Off\]]\$ "
 
 export ARDMK_DIR=/usr/share/arduino
